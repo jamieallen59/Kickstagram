@@ -1,0 +1,13 @@
+<!-- create a form to allow a user to upload an image with text -->
+<!-- allow http to be split into multiple parts to allow larger than 4MB file uploading -->
+<%= form_for @post, html: { multipart: true } do |f| %>
+<!-- generate a title field for the user to fill in -->
+	<%= f.label :title %>
+	<%= f.text_field :title %>
+
+<!-- generate an image upload option -->
+	<%= f.label :picture %>
+	<%= f.file_field :picture %>
+<!-- submit the information given -->
+	<%= f.submit 'Post kicks' %>
+<% end %>

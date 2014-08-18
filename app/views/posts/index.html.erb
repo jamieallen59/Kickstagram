@@ -1,0 +1,15 @@
+<!-- If there are any posts -->
+<% if @posts.any? %>
+<!-- for each one of those posts -->
+	<% @posts.each do |post| %>
+<!-- display the title of the post -->
+		<h3><%= post.title %></h3>
+<!-- and the picture uploaded by the user -->
+		<%= image_tag post.picture.url(:medium), class: 'uploaded-pic' %>
+ 		<% end %>
+<!-- otherwise tell the user there are no posts -->
+<% else %>
+	No posts yet
+<% end %>
+<!-- display a link to allow the user to add a new post -->
+<%= link_to 'New posts', new_post_path %>
