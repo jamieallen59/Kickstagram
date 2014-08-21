@@ -1,0 +1,22 @@
+<article class='post col-sm-6 col-md-4'>
+	<div class="panel panel-default">
+	  <div class="panel-heading">
+	<h3><%= post.title %></h3>
+
+	 </div>
+	  <div class="panel-body">
+	    	<% if post.picture.present? %>
+		<!-- and the picture uploaded by the user -->
+			<%= image_tag post.picture.url(:medium), class: 'uploaded-pic' %>
+		<% end %>
+
+		<section class='tags'>
+			<!-- also display the tags associated with each image -->
+			<% post.tags.each do |tag| %>
+				<%= link_to tag.text, tag_path(tag) %>
+			<% end %>
+		</section>
+	  </div>
+	</div>
+</article>
+ 		
