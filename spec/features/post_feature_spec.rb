@@ -5,7 +5,7 @@ describe 'posts' do
 	context 'When there are no posts' do
 		it 'shows a message' do
 			visit '/posts'
-			expect(page).to have_content 'No posts yet'
+			expect(page).to have_content 'There are no posts yet'
 		end
 	end
 
@@ -24,9 +24,8 @@ describe 'posts' do
 
 		it 'creates the post from a form' do
 			sign_up
-			visit '/posts'
 			click_link 'New post'
-			fill_in 'Title', with: 'Check these sneakers!'
+			fill_in 'post[title]', with: 'Check these sneakers!'
 			click_button 'Post kicks'
 
 			expect(page).to have_content 'Check these sneakers!'
@@ -35,9 +34,8 @@ describe 'posts' do
 
 		it 'displays no image, if no picture attached' do
 			sign_up
-			visit '/posts'
 			click_link 'New post'
-			fill_in 'Title', with: 'Check these sneakers!'
+			fill_in 'post[title]', with: 'Check these sneakers!'
 			click_button 'Post kicks'
 
 			expect(page).not_to have_css 'img.uploaded-pic'
@@ -48,8 +46,8 @@ describe 'posts' do
 			sign_up
 			visit '/posts'
 			click_link 'New post'
-			fill_in 'Title', with: 'Check these sneakers!'
-			attach_file 'Picture', Rails.root.join('spec/images/gold_kicks.jpg')
+			fill_in 'post[title]', with: 'Check these sneakers!'
+			attach_file 'post[picture]', Rails.root.join('spec/images/gold_kicks.jpg')
 			click_button 'Post kicks'
 
 			expect(page).to have_css 'img.uploaded-pic'

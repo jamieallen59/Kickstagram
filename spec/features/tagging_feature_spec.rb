@@ -6,9 +6,9 @@ describe 'tagging posts' do
 		sign_up
 		visit '/posts'
 		click_link 'New post'
-		fill_in 'Title', with: 'Check these sneakers!'
+		fill_in 'post[title]', with: 'Check these sneakers!'
 # add two tags into the tags field of the post
-		fill_in 'Tags', with: '#ROFL, #lovedemsneakers'
+		fill_in 'post[tags_list]', with: '#ROFL, #lovedemsneakers'
 		click_button 'Post kicks'
 
 		expect(page).to have_content '#ROFL'

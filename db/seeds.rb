@@ -5,3 +5,11 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Post.destroy_all
+
+1.upto(10) do |n|
+	tags = %w(#ROFL #phresh #sneakers #lovedemsneakers #kicks).sample(2).join(', ')
+	puts "Adding post number #{n}"
+	Post.create(title: "Cool kicks #{n}!", tags_list: '#swish, #phresh',  picture: File.new(Rails.root.join 'spec/images/night.jpg'))
+end

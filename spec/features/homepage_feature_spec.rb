@@ -29,8 +29,8 @@ describe 'The initial experience' do
 			jamie = User.create(email: 'jamie@gmail.com', password: '12345678', password_confirmation: '12345678')
 			visit '/'
 			click_link 'Log in'
-			fill_in 'user[email]', with: 'jamie@gmail.com'
-			fill_in 'user[password]', with: '12345678'
+			fill_in 'user[email]', with: 'jamie@gmail.com', match: :prefer_exact
+			fill_in 'user[password]', with: '12345678', match: :prefer_exact
 			click_button 'Log in'
 
 			expect(page).to have_content 'New post'

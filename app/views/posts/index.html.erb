@@ -1,17 +1,21 @@
+<% if user_signed_in? %>
+	<%= link_to new_post_path, class: 'btn btn-lg btn-primary' do %>
+		New post <span class="glyphicon glyphicon-pencil"></span>
+	<% end %>
+
+	<% else %>
+	<button class='btn btn-lg btn-primary' id='new-post-modal' data-toggle='modal' data-target='#logInModal'>New post <span class="glyphicon glyphicon-pencil"></span></button>
+<% end %>
+
+<% if @posts.count == 0 %>
+	<p class='no-posts'> There are no posts yet... add one! </p>
+<% end %>
+
 <!-- If there are any posts -->
-<% if @posts.any? %>
+<% if @posts.in_groups_of(3, false) do |post_triplet| %>
 	<section class='row' >
 		<!-- for each one of those posts -->
-		<%= render @posts %>
+		<%= render post_triplet %>
 	</section>
-
-
-
-	<!-- otherwise tell the user there are no posts -->
-	<% else %>
-		No posts yet
 	<% end %>
-	<!-- display a link to allow the user to add a new post -->
-	<%= link_to new_post_path, class: 'btn btn-lg btn-success' do %>
-		New post<span class="glyphicon glyphicon-pencil"></span>
 <% end %>

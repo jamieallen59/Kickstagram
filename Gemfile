@@ -22,6 +22,7 @@ gem 'rspec-collection_matchers'
 gem 'warden'
 
 
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
@@ -38,7 +39,9 @@ group :development, :test do
 	gem 'launchy'
 	gem 'rspec-rails'
 	gem 'capybara'
+	gem 'poltergeist'
 end
+
 
 gem 'paperclip', github: 'thoughtbot/paperclip'
 gem 'aws-sdk'

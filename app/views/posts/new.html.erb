@@ -2,15 +2,18 @@
 <!-- allow http to be split into multiple parts to allow larger than 4MB file uploading -->
 <%= form_for @post, html: { multipart: true } do |f| %>
 <!-- generate a title field for the user to fill in -->
-	<%= f.label :title %>
-	<%= f.text_field :title %>
+	<%= f.label :title, id: 'new-post-label' %>
+	<%= f.text_field :title, id: 'new-post-input', placeholder: 'Enter a title' %>
 <!-- new field for tags -->
-	<%= f.label :tags_list, 'Tags' %>
-	<%= f.text_field :tags_list %>
+	<%= f.label :tags_list, 'Tags', id: 'new-post-label' %>
+	<%= f.text_field :tags_list, id: 'new-post-input', placeholder: 'Enter your tags, separated by a comma' %>
 
 <!-- generate an image upload option -->
-	<%= f.label :picture %>
-	<%= f.file_field :picture %>
+	<%= f.label :picture, id: 'new-post-label' %>
+	<%= f.file_field :picture, id: 'choose-picture-button' %>
+
+	<%= f.label :address, 'Location', id: 'new-post-label' %>
+	<%= f.text_field :address, id: 'new-post-input', placeholder: "Where are you kickin' it?" %>
 <!-- submit the information given -->
-	<%= f.submit 'Post kicks' %>
+	<%= f.submit 'Post kicks', class: "btn btn-primary", id: 'new-post-submit' %>
 <% end %>

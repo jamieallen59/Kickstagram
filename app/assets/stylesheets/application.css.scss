@@ -28,24 +28,108 @@ h2 {
 	margin-top: 60px;
 }
 
+.row {
+	margin-top: 150px;
+}
+button#new-post-modal {
+	position: absolute;
+	left: 50%;
+	margin-left: -68px;
+	top: 18%;
+}
+p.no-posts {
+	position: fixed;
+	top: 34%;
+	left: 50%;
+	margin-top: -10px;
+	margin-left: -108px;
+}
+a.btn.btn-lg.btn-primary {
+	position: fixed;
+	left: 50%;
+	margin-left: -68px;
+	top: 18%;
+}
+
 /*------ Navbar -------*/
+div#navbar-container {
+	height: 70px;
+}
+a.navbar-brand {
+	font-size: 2em;
+	vertical-align: middle;
+	line-height: 40px;
+}
 .logged-in-message {
 	display: inline-block;
 	color: white;
 	margin-right: 20px;
 }
+form.navbar-form.navbar-right {
+	vertical-align: middle;
+	line-height: 51px;
+}
+	a#log-in {
+		text-decoration: none;
+		color: white;
+		font-size: 1.3em;
+		margin-right: 10px;
+	}
+	a#sign-up {
+		text-decoration: none;
+		color: white;
+		font-size: 1.3em;
+		margin-right: 10px;
+	}
+	a#sign-out {
+		text-decoration: none;
+		color: white;
+		font-size: 1.3em;
+	}
 
-a#sign-out {
-	text-decoration: none;
-	color: white;
+/*----- Post new form ------*/
+
+form#new_post {
+	display: flex;
+	flex-direction: column;
+	width: 50%;
+	padding: 18px;
+	border-radius: 8px;
+	font-size: 1.2em;
+	border: 1px solid #B9B9B9;
+	position: fixed;
+	top: 20%;
+	left: 50%;
+	margin-left: -275px;
 }
-a#sign-up {
-	text-decoration: none;
-	color: white;
+form#new_post:hover {
+	background-color: #F8F8F8;
+	}
+label#new-post-label {
+	margin-top: 10px;
+	margin-bottom: 1px;
+	font-size: 1.2em;
 }
-a#log-in {
-	text-decoration: none;
-	color: white;
+input#new-post-input {
+	border-radius: 3px;
+	font-size: 1.1em;
+	width: 100%;
+	border:1px solid #DEDEDE;
+	height: 40px;
+	margin-bottom: 5px;
+	padding-left: 5px;
+}
+input#new-post-input:focus {
+	outline: none;
+}
+input#new-post-submit {
+	width: 50%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 18px;
+}
+input#choose-picture-button {
+	font-size: 0.8em;
 }
 
 /*----- Sign up modal ------*/
@@ -73,6 +157,24 @@ input#sign-up-input {
 	padding-left: 5px;
 }
 input#sign-up-input:focus {
+	outline: none;
+}
+
+/*----- Log in modal ------*/
+
+#log-in-label {
+	font-size: 1.2em;
+}
+input#log-in-input {
+	border-radius: 3px;
+	font-size: 1.2em;
+	width: 100%;
+	border:1px solid #DEDEDE;
+	height: 40px;
+	margin-bottom: 5px;
+	padding-left: 5px;
+}
+input#log-in-input:focus {
 	outline: none;
 }
 
