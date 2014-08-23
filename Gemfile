@@ -20,8 +20,11 @@ gem 'devise'
 gem 'database_cleaner'
 gem 'rspec-collection_matchers'
 gem 'warden'
+gem 'heroku_secrets', github: 'alexpeattie/heroku_secrets'
 
-
+group :production do
+	gem 'rails_12factor'
+end
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
