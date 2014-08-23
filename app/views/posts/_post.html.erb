@@ -17,7 +17,7 @@
 			<% end %>
 			
 			<% unless post.address.blank? %>
-				<%= link_to 'Map', post_map_path(post), class: 'btn btn-danger' %>
+				<%= link_to 'Map', post_map_path(post), id: 'map-tag' %>
 			<% end %>
 
 		</section>

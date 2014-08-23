@@ -18,7 +18,9 @@
 
 body {
 	margin-top: 60px;
-}
+/*	background: no-repeat center center fixed;
+	background-size: cover;
+*/	}
 
 img {
 	width: 100%;
@@ -39,16 +41,27 @@ button#new-post-modal {
 }
 p.no-posts {
 	position: fixed;
+	font-size: 24px;
+	color: white;
 	top: 34%;
 	left: 50%;
-	margin-top: -10px;
-	margin-left: -108px;
+	margin-top: -17px;
+	margin-left: -183px;
 }
 a.btn.btn-lg.btn-primary {
 	position: fixed;
 	left: 50%;
 	margin-left: -68px;
 	top: 18%;
+}
+
+a#map-tag {
+	float: right;
+	border-radius: 3px;
+	background-color: #DF8523;
+	border: 1px solid #855611;
+	color: black;
+	font-weight: 400;
 }
 
 /*------ Navbar -------*/
@@ -101,6 +114,7 @@ form#new_post {
 	top: 20%;
 	left: 50%;
 	margin-left: -275px;
+	background-color: #fbfbfb;
 }
 form#new_post:hover {
 	background-color: #F8F8F8;

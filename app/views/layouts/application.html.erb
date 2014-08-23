@@ -28,7 +28,7 @@
             	<div class='logged-in-message'>
 	            	Logged in as <%= current_user.email %>
 	            </div>
-	            	<%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'btn btn-danger' %>
+	            	<%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'btn btn-danger',  id: 'sign-out' %>
         		<% else %>
 							<!-- log in modal -->
 							<%= link_to 'Log in', '#', id: 'log-in', class: 'btn btn-success', data: { toggle: 'modal', target: '#logInModal' } %>
@@ -39,6 +39,21 @@
         </div><!--/.navbar-collapse -->
       </div>
     </div>
+
+
+     <script src='https://code.jquery.com/jquery-2.0.3.min.js'></script>
+				<script>
+					$(document).ready(function() {
+						if ($('p.no-posts').length) {
+							$('body').css('background-image', 'url(' + 'http://38.media.tumblr.com/207e0ff589fedbd13275a245100dd0b0/tumblr_n8ypijruib1qksu3xo1_500.jpg' + ')');
+						}
+						if ($('form#new_post').length) {
+							$('body').css('background-image', 'url(' + 'http://38.media.tumblr.com/bf39798f8ce1111eb18d24c6f3a7ef22/tumblr_n8gas6dty31riawivo1_500.jpg' + ')');
+						}
+							});
+
+				</script>
+
 
 <!-- Sign up Modal -->
 <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

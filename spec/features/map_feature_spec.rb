@@ -6,7 +6,7 @@ describe 'maps' do
 	end
 
 	it 'displays a map when the Map button is clicked', js: true do
-		visit '/'
+		sign_up
 		click_link 'Map'
 		#Testing for the presence of Google Maps
 		expect(page).to have_css '.gm-style'

@@ -26,7 +26,7 @@ describe 'filtering by tags' do
 		visit '/posts'
 		click_link '#phresh'
 
-		expect(page).to have_css 'h1', text: 'Posts tagged with #phresh'
+		expect(page).to have_css 'h3', text: 'Posts tagged with #phresh'
 		expect(page).to have_content 'Post B'
 		expect(page).not_to have_content 'Post A'
 	end
