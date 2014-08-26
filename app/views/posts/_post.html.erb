@@ -24,7 +24,6 @@
 			<i>Sent from <%= post.address %></i>
 		</section>
 		<section class='price'>
-			Price: £<%= link_to post.price.to_s, new_charge_path(post), id: 'price' %> 
 			Price: £<%= post.price.to_s %> 
 		</section>
 

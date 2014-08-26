@@ -4,6 +4,8 @@ class ChargesController < ApplicationController
 	end
 
 	def create
+
+  @post = Post.find(params[:id])
   # Amount in cents
   @amount = 500
 
