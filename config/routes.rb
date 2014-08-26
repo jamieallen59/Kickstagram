@@ -6,6 +6,8 @@ Rails.application.routes.draw do
     resource :map
   end
 
+  resources :charges
+
   resources :tags
 
   root to: 'posts#index'
