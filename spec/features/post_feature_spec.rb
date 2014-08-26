@@ -24,9 +24,7 @@ describe 'posts' do
 
 		it 'creates the post from a form' do
 			sign_up
-			click_link 'New post'
-			fill_in 'post[title]', with: 'Check these sneakers!'
-			click_button 'Post kicks'
+			post_an_image('Check these sneakers!', '5.99', 'London, UK')
 
 			expect(page).to have_content 'Check these sneakers!'
 			expect(current_path).to eq '/posts'
@@ -44,36 +42,21 @@ describe 'posts' do
 
 		it 'can attach an image to a post' do
 			sign_up
-			visit '/posts'
-			click_link 'New post'
-			fill_in 'post[title]', with: 'Check these sneakers!'
-			attach_file 'post[picture]', Rails.root.join('spec/images/gold_kicks.jpg')
-			click_button 'Post kicks'
+			post_an_image('Check these kicks!', '5.99', 'London, UK')
 
 			expect(page).to have_css 'img.uploaded-pic'
 		end
 
 		it 'display the location given by the user' do
 			sign_up
-			visit '/posts'
-			click_link 'New post'
-			fill_in 'post[title]', with: 'Check these sneakers!'
-			attach_file 'post[picture]', Rails.root.join('spec/images/gold_kicks.jpg')
-			fill_in 'post[price]', with: '£5.99'
-			fill_in 'post[address]', with: 'London, UK'
-			click_button 'Post kicks'
+			post_an_image('Check these kicks!', '5.99', 'London, UK')
 
 			expect(page).to have_content 'Sent from London, UK'
 		end
 
 		it 'can have a price associated with it' do
 			sign_up
-			visit '/posts'
-			click_link 'New post'
-			fill_in 'post[title]', with: 'Check these sneakers!'
-			attach_file 'post[picture]', Rails.root.join('spec/images/gold_kicks.jpg')
-			fill_in 'post[price]', with: '5.99'
-			click_button 'Post kicks'
+			post_an_image('Check these kicks!', '5.99', 'London, UK')
 
 			expect(page).to have_content '£5.99'
 		end

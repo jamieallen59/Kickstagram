@@ -7,7 +7,6 @@ describe 'tagging posts' do
 		visit '/posts'
 		click_link 'New post'
 		fill_in 'post[title]', with: 'Check these sneakers!'
-# add two tags into the tags field of the post
 		fill_in 'post[tags_list]', with: '#ROFL, #lovedemsneakers'
 		click_button 'Post kicks'
 

@@ -1,5 +1,6 @@
 Rails.application.configure do
-  # Settings specified here will take precedence over those in config/application.rb.
+
+CODECLIMATE_REPO_TOKEN='efd8256387e8f575676597d629bbad166ca6dc9d987adaaf8f5af00bd2f27ee7'  # Settings specified here will take precedence over those in config/application.rb.
 config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
   # In the development environment your application's code is reloaded on
