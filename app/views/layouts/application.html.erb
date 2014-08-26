@@ -20,7 +20,8 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/"><img src='/spec/images/camera.png' alt='Doh!'>Kickstagram</a>
+          <img src='/assets/camera.png' alt='Doh!' id='main-logo'>
+          <a class="navbar-brand" href="/">Kickstagram</a>
         </div>
         <div class="navbar-collapse collapse">
           <form class="navbar-form navbar-right" role="form">
@@ -29,11 +30,16 @@
 	            	Logged in as <%= current_user.email %>
 	            </div>
 	            	<%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'btn btn-danger',  id: 'sign-out' %>
-        		<% else %>
+                <% else %>
 							<!-- log in modal -->
-							<%= link_to 'Log in', '#', id: 'log-in', class: 'btn btn-success', data: { toggle: 'modal', target: '#logInModal' } %>
+							<%= link_to '#', id: 'log-in', class: 'btn btn-success', data: { toggle: 'modal', target: '#logInModal' } do %>
+                <i class='glyphicon glyphicon-user'></i> Log in
+              <% end %>
 							<!-- sign up modal -->
-						  <%= link_to 'Sign up', '#', id: 'sign-up', class: "btn btn-success", data: { toggle: 'modal', target: '#signUpModal' } %>
+              <%= link_to '#', id: 'sign-up', class: "btn btn-success", data: { toggle: 'modal', target: '#signUpModal' } do %>
+                <i class='glyphicon glyphicon-check'></i> Sign up
+              <% end %>
+
 						<% end %>
           </form>
         </div><!--/.navbar-collapse -->
@@ -53,7 +59,7 @@
         <h4 class="modal-title" id="modal-header">Sign up to Kickstagram</h4>
       </div>
         <div class="modal-body">
-        <%= form_for(:user, as: :user, url: registration_path(:user)) do |f| %>
+        <%= form_for(User.new, as: :user, url: registration_path(:user)) do |f| %>
 
         <div><%= f.label :email, id: 'sign-up-label' %><br />
         <%= f.email_field :email, autofocus: true, id: 'sign-up-input', placeholder: 'email address' %></div>

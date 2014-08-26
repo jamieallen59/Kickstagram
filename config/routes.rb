@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   
   resources :posts do
     resource :map
+    resource :price
   end
 
   resources :charges

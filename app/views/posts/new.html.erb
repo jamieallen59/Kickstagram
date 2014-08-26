@@ -12,6 +12,9 @@
 	<%= f.label :picture, id: 'new-post-label' %>
 	<%= f.file_field :picture, id: 'choose-picture-button' %>
 
+	<%= f.label :price, 'Price', id: 'new-post-label' %>
+	<%= f.text_field :price, id: 'new-post-input', placeholder: 'Attach a price to your image' %>
+
 	<%= f.label :address, 'Location', id: 'new-post-label' %>
 	<%= f.text_field :address, id: 'new-post-input', placeholder: "Where are you kickin' it?" %>
 <!-- submit the information given -->

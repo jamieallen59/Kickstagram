@@ -18,18 +18,13 @@
 
 body {
 	margin-top: 60px;
-/*	background: no-repeat center center fixed;
-	background-size: cover;
-*/	}
-
+}
 img {
 	width: 100%;
 }
-
 h2 {
 	margin-top: 60px;
 }
-
 .row {
 	margin-top: 150px;
 }
@@ -38,6 +33,7 @@ button#new-post-modal {
 	left: 50%;
 	margin-left: -68px;
 	top: 18%;
+	font-weight: 200;
 }
 p.no-posts {
 	position: fixed;
@@ -49,7 +45,7 @@ p.no-posts {
 	margin-left: -183px;
 }
 a.btn.btn-lg.btn-primary {
-	position: fixed;
+	position: absolute;
 	left: 50%;
 	margin-left: -68px;
 	top: 18%;
@@ -68,10 +64,22 @@ a#map-tag {
 div#navbar-container {
 	height: 70px;
 }
+.navbar-header {
+	display: flex;
+}
+img#main-logo {
+	width: 40px;
+	height: 40px;
+	display: flex;
+	margin-left: -55px;
+	margin-right: 5px;
+	margin-top: 14px;
+}
 a.navbar-brand {
 	font-size: 2em;
 	vertical-align: middle;
 	line-height: 40px;
+	font-weight: 200;
 }
 .logged-in-message {
 	display: inline-block;
@@ -87,17 +95,20 @@ form.navbar-form.navbar-right {
 		color: white;
 		font-size: 1.3em;
 		margin-right: 10px;
+		font-weight: 200;
 	}
 	a#sign-up {
 		text-decoration: none;
 		color: white;
 		font-size: 1.3em;
 		margin-right: 10px;
+		font-weight: 200;
 	}
 	a#sign-out {
 		text-decoration: none;
 		color: white;
 		font-size: 1.3em;
+		font-weight: 200;
 	}
 
 /*----- Post new form ------*/
