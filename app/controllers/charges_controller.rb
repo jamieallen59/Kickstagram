@@ -1,6 +1,7 @@
 class ChargesController < ApplicationController
 
 	def new
+    @post = Post.find(params[:format])
 	end
 
 	def create

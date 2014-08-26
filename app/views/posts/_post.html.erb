@@ -24,7 +24,20 @@
 			<i>Sent from <%= post.address %></i>
 		</section>
 		<section class='price'>
-			Price: £<%= post.price.to_s %> 
+			<% if post.price %>
+				<%= form_tag charges_path do %>
+				  <article>
+				    <label class="amount">
+				      <span>Amount: £<%= "#{post.price}" %></span>
+				    </label>
+				  </article>
+
+				  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+				          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+				          data-description="A month's subscription"
+				          data-amount=<%= "#{post.price}" %>></script>
+				<% end %>
+			<% end %>
 		</section>
 
 	  </div>

@@ -72,7 +72,7 @@ describe 'posts' do
 			click_link 'New post'
 			fill_in 'post[title]', with: 'Check these sneakers!'
 			attach_file 'post[picture]', Rails.root.join('spec/images/gold_kicks.jpg')
-			fill_in 'post[price]', with: '£5.99'
+			fill_in 'post[price]', with: '5.99'
 			click_button 'Post kicks'
 
 			expect(page).to have_content '£5.99'
