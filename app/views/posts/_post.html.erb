@@ -1,46 +1,41 @@
 <article class='post col-sm-6 col-md-4'>
-	<div class="panel panel-default">
-	  <div class="panel-heading">
-	<h3><%= post.title %></h3>
-
-	 </div>
-	  <div class="panel-body">
-	    	<% if post.picture.present? %>
-		<!-- and the picture uploaded by the user -->
-			<%= image_tag post.picture.url(:medium), class: 'uploaded-pic' %>
-		<% end %>
-
-		<section class='tags'>
-			<!-- also display the tags associated with each image -->
-			<% post.tags.each do |tag| %>
-				<%= link_to tag.text, tag_path(tag) %>
-			<% end %>
-			
-			<% unless post.address.blank? %>
-				<%= link_to 'Map', post_map_path(post), id: 'map-tag' %>
-			<% end %>
-		</section>
-		<section class='location'>
-			<i>Sent from <%= post.address %></i>
-		</section>
-		<section class='price'>
-			<% if post.price %>
-				<%= form_tag charges_path do %>
-				  <article>
-				    <label class="amount">
-				      <span>Amount: £<%= "#{post.price}" %></span>
-				    </label>
-				  </article>
-
-				  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3><%= post.title %></h3>
+    </div>
+    <div class="panel-body">
+      <% if post.picture.present? %>
+        <!-- and the picture uploaded by the user -->
+        <%= image_tag post.picture.url(:medium), class: 'uploaded-pic' %>
+      <% end %>
+      <section class='tags'>
+        <!-- also display the tags associated with each image -->
+        <% post.tags.each do |tag| %>
+          <%= link_to tag.text, tag_path(tag) %>
+        <% end %>
+        <% unless post.address.blank? %>
+          <%= link_to 'Map', post_map_path(post), id: 'map-tag' %>
+        <% end %>
+      </section>
+      <section class='location'>
+        <i>Sent from
+          <%= post.address %></i>
+      </section>
+      <section class='price'>
+        <% if post.price %>
+          <%= form_tag charges_path do %>
+            <article>
+              <label class="amount">
+                <span>Amount: £<%= "#{post.price}" %></span>
+              </label>
+            </article>
+            <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
 				          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
 				          data-description="A month's subscription"
 				          data-amount=<%= "#{post.price}" %>></script>
-				<% end %>
-			<% end %>
-		</section>
-
-	  </div>
-	</div>
+          <% end %>
+        <% end %>
+      </section>
+    </div>
+  </div>
 </article>
- 		
