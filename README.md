@@ -4,8 +4,7 @@ Kickstagram [![Code Climate](https://codeclimate.com/github/jamieallen59/Kicksta
 My clone of instagram, but spicifically for your favourite shoes. The more fly, the better!
 
 ![](app/assets/images/homepage_screenshot.png)
-
-A working version of the app can be found here: [Kickstagram](http://kicksta-gram.herokuapp.com/)
+<!-- A working version of the app can be found here: [Kickstagram](http://kicksta-gram.herokuapp.com/) -->
 
 Technologies and methods used:
 - Uploading and processing images using Paperclip, hosting via Amazon S3
@@ -40,4 +39,9 @@ open your browser and go to [localhost:3000](http://localhost:3000)
 ```sh
 cd Kickstagram
 rspec
+```
+
+### Add seed data
+```sh
+bin/rake db:seed
 ```
