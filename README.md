@@ -1,9 +1,9 @@
-Kickstagram
+Kickstagram [![Code Climate](https://codeclimate.com/github/jamieallen59/Kickstagram/badges/gpa.svg)](https://codeclimate.com/github/jamieallen59/Kickstagram)
 =============
 
-My clone of instagram, but spicifically for your favourite shoes. The more fly, the better
+My clone of instagram, but spicifically for your favourite shoes. The more fly, the better!
 
-[![Code Climate](https://codeclimate.com/github/jamieallen59/Kickstagram/badges/gpa.svg)](https://codeclimate.com/github/jamieallen59/Kickstagram)
+![](app/assets/images/homepage_screenshot.png)
 
 A working version of the app can be found here: [Kickstagram](http://kicksta-gram.herokuapp.com/)
 
@@ -16,15 +16,16 @@ Technologies and methods used:
 - Creating APIs using Rails + jBuilder
 - Payments using Stripe
 
-Go to the homepage, sign up and post your favourite kicks. Set a price to sell you picture at and allow people to see where you've posted from, using Gmaps.
+Go to the homepage, sign up and post your favourite kicks. Set a price at which to sell your picture and allow people to see where you've posted from, using Gmaps.
+
+![](app/assets/images/mainpage_screenshot.png)
 
 ### Have a look at the code
 ```sh
 git clone git@github.com:jamieallen59/Kickstagram.git
 cd Kickstagram
 bundle
-bin/rake db:create
-bin/rake db:migrate
+bin/rake db:create db:migrate
 ```
 
 ### How to run it
@@ -35,7 +36,7 @@ bin/rails s
 
 open your browser and go to [localhost:3000](http://localhost:3000)
 
-### How to test it
+### Run the tests
 ```sh
 cd Kickstagram
 rspec
