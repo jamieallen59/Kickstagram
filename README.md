@@ -1,7 +1,7 @@
 Kickstagram [![Code Climate](https://codeclimate.com/github/jamieallen59/Kickstagram/badges/gpa.svg)](https://codeclimate.com/github/jamieallen59/Kickstagram)
 =============
 
-My clone of instagram, but spicifically for your favourite shoes. The more fly, the better!
+A clone of Instagram but specifically for your favourite shoes. The more fly, the better!
 
 A working version of the app can be found here: [Kickstagram](http://kicksta-gram.herokuapp.com/)
 
